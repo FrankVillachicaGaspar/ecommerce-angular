@@ -9,3 +9,8 @@
 .object-position-left {
   object-position: left;
 }
+
+.btn__bg-login {
+  background-color: #0061f7;
+  border-color: #0061f7;
+}

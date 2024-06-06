@@ -1,3 +1,16 @@
-<p>aca el layout</p>
-<router-outlet />
-<p>aca el footer</p>
+<link rel="stylesheet" href="/assets/css/style.min.css">
+
+<div class="page-flex">
+  <!-- ! Sidebar -->
+  <app-sidebar [sidebar]="sidebar" (onChangeSidebar)="onClickBtnShowMenu()"/>
+  <div class="main-wrapper">
+    <!-- ! Main nav -->
+    <app-navbar [sidebar]="sidebar" (onChangeSidebar)="onClickBtnShowMenu()"/>
+    <!-- ! Main -->
+    <main class="main users chart-page" id="skip-target">
+      <router-outlet />
+    </main>
+    <!-- ! Footer -->
+    <app-footer/>
+  </div>
+</div>
