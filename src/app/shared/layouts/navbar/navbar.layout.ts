@@ -1,10 +1,5 @@
 import { Component, input, output } from '@angular/core';
-
-enum TypeClickBtnNavbar {
-  NONE = 0,
-  NOTIFICATION = 1,
-  USER = 2
-}
+import { EClickBtnNavbar } from '@shared/enums/layout.enum';
 
 @Component({
   selector: 'app-navbar',
@@ -17,17 +12,17 @@ export class NavbarLayout {
   public sidebar = input.required<boolean>();
   public onChangeSidebar = output();
 
-  public E_LAYER: TypeClickBtnNavbar = TypeClickBtnNavbar.NONE;
+  public E_LAYER: EClickBtnNavbar = EClickBtnNavbar.NONE;
 
   onClickBtnShowMenu() {
     this.onChangeSidebar.emit();
   }
 
-  onClickLayerActive(VALUE: TypeClickBtnNavbar) {
+  onClickLayerActive(VALUE: EClickBtnNavbar) {
     this.E_LAYER = VALUE;
   }
 
   public get typeLayer() {
-    return TypeClickBtnNavbar;
+    return EClickBtnNavbar;
   }
 }

@@ -1,0 +1,1 @@
+export const tableHeader = ['#', 'First', 'Last', 'Handle'];

@@ -1,0 +1,20 @@
+.activate {
+  background-color: #0061f7 !important;
+  color: #fff !important;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.page-link:focus {
+  color: #fff;
+  background-color: #0061f7 !important;
+  outline: 0;
+  box-shadow: none;
+}
+
+.page-link:hover:not(.activate) {
+  background-color: #dcdcdd !important;
+}

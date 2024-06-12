@@ -1,0 +1,12 @@
+<table class="table font-size-14">
+  <thead>
+    <tr>
+      @for (item of theader(); track $index) {
+        <th scope="col">{{item}}</th>
+      }
+    </tr>
+  </thead>
+  <tbody>
+    <ng-content/>
+  </tbody>
+</table>

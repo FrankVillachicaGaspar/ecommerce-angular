@@ -1,12 +1,12 @@
 <div class="layer"></div>
-<aside [className]="sidebar() ? 'sidebar hidden' : 'sidebar'">
+<aside [ngClass]="['sidebar vh-100', (sidebar() ? ' hidden' : '')]">
   <div class="sidebar-start">
     <div class="sidebar-head">
       <a href="/" class="logo-wrapper" title="Home">
         <span class="sr-only">Home</span>
         <span class="icon logo" aria-hidden="true"></span>
         <div class="logo-text">
-          <span class="logo-title fs-6">CM Garments</span>
+          <span class="logo-title fs-6">Ecommerce</span>
           <span class="logo-subtitle">Dashboard</span>
         </div>
 
@@ -17,26 +17,40 @@
       </button>
     </div>
     <div class="sidebar-body">
+      <!-- ? Ajustes principales -->
       <ul class="sidebar-body-menu">
+        @for (item of sidebarOptions; track $index) {
         <li>
-          <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
+          <a [routerLink]="item.router" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <span class="linear-height-0">
+              <i [ngClass]="['fs-5', item.icon]"></i>
+            </span>
+            <span class="ms-3 title-item">{{item.name}}</span>
+          </a>
         </li>
-        <li>
+        }
+        <!-- * li con counter (utilizar si es necesario) -->
+        <!-- <li>
           <a href="comments.html">
             <span class="icon message" aria-hidden="true"></span>
             Comments
           </a>
           <span class="msg-counter">7</span>
-        </li>
+        </li> -->
       </ul>
-      <span class="system-menu__title">system</span>
+      <span class="system-menu__title">Sistema</span>
+      <!-- ? Ajustes de Sistema -->
       <ul class="sidebar-body-menu">
+        @for (item of sidebarOptionsSystem; track $index) {
         <li>
-          <a href="appearance.html"><span class="icon edit" aria-hidden="true"></span>Appearance</a>
+          <a [routerLink]="item.router" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <span class="linear-height-0">
+              <i [ngClass]="['fs-5', item.icon]"></i>
+            </span>
+            <span class="ms-3 title-item">{{item.name}}</span>
+          </a>
         </li>
-        <li>
-          <a href="##"><span class="icon setting" aria-hidden="true"></span>Settings</a>
-        </li>
+        }
       </ul>
     </div>
   </div>

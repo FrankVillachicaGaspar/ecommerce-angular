@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="main-title">Categorías</h2>
+  <div class="row">
+    <div class="px-3">
+      <!-- ? Table -->
+      <div class="py-3 px-3 bg-white rounded-3">
+        <app-table [theader]="tableHeader">
+          @for (item of [1,2,3,4,5,6,7,8,9,1]; track $index) {
+          <tr>
+            <th scope="row">{{$index}}</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>mdo</td>
+          </tr>
+          }
+        </app-table>
+        <div class="d-flex justify-content-center pt-2">
+          <app-table-pagination [pagination]="pagination" (emitChangePage)="getCategories($event)" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
