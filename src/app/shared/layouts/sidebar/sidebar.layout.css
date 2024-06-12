@@ -1,0 +1,9 @@
+.linear-height-0 {
+  line-height: 0;
+}
+
+@media (min-width: 1200px) {
+  .hidden .title-item {
+    margin-left: 0 !important;
+  }
+}
