@@ -51,12 +51,15 @@ export class TablePaginationComponent {
       // Tap para manejar efectos secundarios y reiniciar el contador
       tap(() => {
         console.log("clickCount", this.clickCount);
+        let page: number = 1;
 
-        let page = this.isClickNext
-          ? this.pagination().page + this.clickCount
-          : this.pagination().page - this.clickCount;
-
-        page = page < 1 ? 1 : page;
+        if (this.isClickNext) {
+          page = this.pagination().page + this.clickCount;
+          page = (page > this.pagination().totalPages) ? this.pagination().totalPages : page;
+        } else {
+          page = this.pagination().page - this.clickCount;
+          page = (page < 1) ? 1 : page;
+        }
 
         this.clickCount = 0;  // Reiniciar el contador
         this.onClickBtnPagination(page);
