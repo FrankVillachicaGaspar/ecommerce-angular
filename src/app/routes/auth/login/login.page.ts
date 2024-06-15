@@ -35,7 +35,7 @@ export class LoginPage {
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
-    if (this.authService.ckeckToken()) this.router.navigate(['/']);
+    if (this.authService.checkToken()) this.router.navigate(['/']);
   }
 
   onSubmit() {
@@ -48,7 +48,7 @@ export class LoginPage {
 
       this.authService.login(user).subscribe({
         next: (data) => {
-          if (this.authService.ckeckToken()) this.router.navigate(['/']);
+          if (this.authService.checkToken()) this.router.navigate(['/']);
           console.log('Inicio de Sessión Correctamente');
         },
         error: (err: HttpErrorResponse) => {

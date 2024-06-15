@@ -15,7 +15,6 @@ export class AuthService {
   constructor(private http: HttpClient, private cookie: CookieService) {}
 
   login(data: LoginReqModel): Observable<LoginRespModel> {
-    // console.log(data);
     return this.http.post<LoginRespModel>(`${this.URL}/auth`, data).pipe(
       tap((res) => {
         const { access_token, user } = res;
@@ -37,7 +36,7 @@ export class AuthService {
     return this.cookie.get('token');
   }
 
-  ckeckToken(): boolean {
+  checkToken(): boolean {
     return this.cookie.check('token');
   }
 
