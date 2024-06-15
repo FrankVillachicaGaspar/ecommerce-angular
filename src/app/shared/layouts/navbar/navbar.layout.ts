@@ -1,4 +1,6 @@
 import { Component, input, output } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '@core/services/auth.service';
 import { EClickBtnNavbar } from '@shared/enums/layout.enum';
 
 @Component({
@@ -6,13 +8,19 @@ import { EClickBtnNavbar } from '@shared/enums/layout.enum';
   standalone: true,
   imports: [],
   templateUrl: './navbar.layout.html',
-  styleUrl: './navbar.layout.css'
+  styleUrl: './navbar.layout.css',
 })
 export class NavbarLayout {
   public sidebar = input.required<boolean>();
   public onChangeSidebar = output();
 
   public E_LAYER: EClickBtnNavbar = EClickBtnNavbar.NONE;
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  public get typeLayer() {
+    return EClickBtnNavbar;
+  }
 
   onClickBtnShowMenu() {
     this.onChangeSidebar.emit();
@@ -22,7 +30,8 @@ export class NavbarLayout {
     this.E_LAYER = VALUE;
   }
 
-  public get typeLayer() {
-    return EClickBtnNavbar;
+  onClickLogout() {
+    this.authService.deleteToken();
+    this.router.navigate(['auth', 'login']);
   }
 }
