@@ -89,18 +89,24 @@
         </button>
         <ul
           [className]="'users-item-dropdown nav-user-dropdown dropdown' + (E_LAYER == typeLayer.USER ? ' active' : '')">
-          <li><a href="##">
+          <li>
+            <a href="##">
               <i data-feather="user" aria-hidden="true"></i>
-              <span>Profile</span>
-            </a></li>
-          <li><a href="##">
+              <span>Perfil</span>
+            </a>
+          </li>
+          <li>
+            <a href="##">
               <i data-feather="settings" aria-hidden="true"></i>
-              <span>Account settings</span>
-            </a></li>
-          <li><a class="danger" href="##">
+              <span>Ajustes de Cuenta</span>
+            </a>
+          </li>
+          <li>
+            <a class="danger" href="##" (click)="onClickLogout()">
               <i data-feather="log-out" aria-hidden="true"></i>
-              <span>Log out</span>
-            </a></li>
+              <span>Cerrar Sessión</span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

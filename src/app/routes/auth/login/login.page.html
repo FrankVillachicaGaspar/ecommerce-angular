@@ -15,9 +15,9 @@
                 <h3 class="fw-normal mb-4 pb-4 text-center fs-4 fw-semibold">Inicio de Sesión</h3>
 
                 <div class="form-floating mb-4">
-                  <input type="email" formControlName="email" class="form-control" id="floatingInput"
+                  <input type="text" formControlName="emailOrUsername" class="form-control" id="floatingInput"
                     placeholder="name@example.com">
-                  <label for="Email">Correo electrónico</label>
+                  <label for="Email">Correo o Usuario</label>
                 </div>
 
 
@@ -29,8 +29,8 @@
 
                 <div class="pt-3 mb-4">
                   <button data-mdb-button-init data-mdb-ripple-init
-                    class="btn btn-info btn-lg btn-block d-block w-100 btn__bg-login text-white"
-                    type="submit" [disabled]="loginForm.invalid">INGRESAR</button>
+                    class="btn btn-info btn-lg btn-block d-block w-100 btn__bg-login text-white" type="submit"
+                    [disabled]="loginForm.invalid">INGRESAR</button>
                 </div>
 
                 <p class="small mb-5 pb-lg-2"><a class="text-primary" routerLink="/auth/register">Olvidé mi
