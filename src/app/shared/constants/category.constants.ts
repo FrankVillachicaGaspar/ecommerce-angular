@@ -1,1 +1,7 @@
-export const tableHeader = ['#', 'First', 'Last', 'Handle'];
+export const tableHeader = [
+  '#',
+  'Nombre',
+  'Descripción',
+  'F. modificación',
+  'Opciones',
+];

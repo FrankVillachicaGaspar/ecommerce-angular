@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ProductService } from '@core/services/product.service';
 import { TablePaginationComponent } from '@shared/components/table-navigation/table-pagination.component';
 import { TableComponent } from '@shared/components/table/table.component';
 import { tableHeader } from '@shared/constants/product.constants';
-import { IPagination } from '@shared/interfaces/pagination.interface';
 
 @Component({
   selector: 'app-product',
@@ -12,17 +12,17 @@ import { IPagination } from '@shared/interfaces/pagination.interface';
   styleUrl: './product.page.css'
 })
 export class ProductPage {
+  public productService = inject(ProductService);
+
   public tableHeader = tableHeader;
-  public pagination: IPagination = {
-    totalPages: 10,
-    limit: 10,
-    page: 1,
-    totalItems: 28,
-    next: 2,
-    previous: null
+  public products = this.productService.products;
+  public pagination = this.productService.pagination;
+
+  ngOnInit() {
+    this.getProducts();
   }
 
-  getCategories(page: number) {
-    console.log("page", page);
+  getProducts(page: number = 1) {
+    this.productService.getProducts(page).subscribe();
   }
 }

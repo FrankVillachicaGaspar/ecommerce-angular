@@ -5,17 +5,27 @@
       <!-- ? Table -->
       <div class="py-3 px-3 bg-white rounded-3">
         <app-table [theader]="tableHeader">
-          @for (item of [1,2,3,4,5,6,7,8,9,1]; track $index) {
+          @for (category of categories(); track category.id) {
           <tr>
-            <th scope="row">{{$index}}</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>mdo</td>
+            <th scope="row">{{category.id}}</th>
+            <td>{{ category.name }}</td>
+            <td>{{category.desc}}</td>
+            <td>{{category.createdAt}}</td>
+            <td class="tbutton-max-with">
+              <div class="d-flex justify-content-evenly">
+                <button type="button" class="btn btn-outline-success rounded-4"><i class="bi bi-eye-fill"></i></button>
+                <button type="button" class="btn btn-primary rounded-4" (click)="openEditDialog(category.id)">
+                  <i class="bi bi-pencil-square"></i>
+                </button>
+                <button type="button" class="btn btn-danger rounded-4"><i class="bi bi-trash3-fill"></i></button>
+              </div>
+            </td>
           </tr>
           }
         </app-table>
+        <p class="text-end pe-2 pt-2">Total de categorías: {{pagination().totalItems}}</p>
         <div class="d-flex justify-content-center pt-2">
-          <app-table-pagination [pagination]="pagination" (emitChangePage)="getCategories($event)" />
+          <app-table-pagination [pagination]="pagination()" (emitChangePage)="getCategories($event)" />
         </div>
       </div>
     </div>
