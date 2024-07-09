@@ -5,7 +5,7 @@
         <span aria-hidden="true">&laquo;</span>
       </button>
     </li>
-    @if (paginationComponent.showStart) {
+    @if (pagination().showStart) {
     <li class="page-item me-2">
       <button class="page-link border-0 bg-body-secondary bg-opacity-75 rounded-3" (click)="onClickBtnPagination(1)">
         1
@@ -14,29 +14,29 @@
     }
     <li class="page-item">
       <button class="page-link border-0 bg-body-secondary bg-opacity-75 rounded-3"
-        [ngClass]="[paginationComponent.first === pagination().page ? 'activate' : '']"
-        (click)="onClickBtnPagination(paginationComponent.first)">
-        {{paginationComponent.first}}
+        [ngClass]="[pagination().first === pagination().page ? 'activate' : '']"
+        (click)="onClickBtnPagination(pagination().first)">
+        {{pagination().first}}
       </button>
     </li>
-    @if (paginationComponent.showSecond) {
+    @if (pagination().showSecond) {
     <li class="page-item">
       <button class="page-link border-0 bg-body-secondary bg-opacity-75 rounded-3"
-        [ngClass]="[paginationComponent.second === pagination().page ? 'activate' : '']"
-        (click)="onClickBtnPagination(paginationComponent.second)">
-        {{paginationComponent.second}}
+        [ngClass]="[pagination().second === pagination().page ? 'activate' : '']"
+        (click)="onClickBtnPagination(pagination().second)">
+        {{pagination().second}}
       </button>
     </li>
     }
-    @if (paginationComponent.showEllipsis) {
+    @if (pagination().showEllipsis) {
     <li class="page-item d-flex align-items-end"><span class="page-link border-0 rounded-3 px-1">...</span></li>
     }
-    @if (paginationComponent.showFinal) {
+    @if (pagination().showFinal) {
     <li class="page-item">
       <button class="page-link border-0 bg-body-secondary bg-opacity-75 rounded-3"
-        [ngClass]="[paginationComponent.final === pagination().page ? 'activate' : '']"
-        (click)="onClickBtnPagination(paginationComponent.final)">
-        {{paginationComponent.final}}
+        [ngClass]="[pagination().final === pagination().page ? 'activate' : '']"
+        (click)="onClickBtnPagination(pagination().final)">
+        {{pagination().final}}
       </button>
     </li>
     }

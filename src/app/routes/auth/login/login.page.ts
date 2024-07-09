@@ -9,7 +9,7 @@ import {
 import { Router, RouterLink } from '@angular/router';
 
 import { LoginReqModel } from '@core/models/auth.model';
-import { ErrorModel } from '@core/models/error.model';
+import { ErrorResponse } from '@core/models/error-response.model';
 import { AuthService } from '@core/services/auth.service';
 
 @Component({
@@ -52,7 +52,7 @@ export class LoginPage {
           console.log('Inicio de Sessión Correctamente');
         },
         error: (err: HttpErrorResponse) => {
-          const { message, statusCode } = err.error as ErrorModel;
+          const { message, statusCode } = err.error as ErrorResponse;
           console.log(`Ocurrio un error ${statusCode} (${message.toString()})`);
         },
       });

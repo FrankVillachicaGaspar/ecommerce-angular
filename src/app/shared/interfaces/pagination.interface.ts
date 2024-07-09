@@ -11,8 +11,10 @@ export interface IPaginationComponent {
   first: number
   second: number
   final: number
+  page: number
   next: number
   previous: number
+  totalItems: number
   showSecond: boolean
   showStart: boolean
   showFinal: boolean

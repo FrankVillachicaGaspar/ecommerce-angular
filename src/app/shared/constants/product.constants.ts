@@ -1,1 +1,10 @@
-export const tableHeader = ['#', 'First', 'Last', 'Handle'];
+export const tableHeader = [
+  '#',
+  'Nombre',
+  'Categoría',
+  'Descripción',
+  'Stock',
+  'Precio',
+  'F. Creación',
+  'Opciones',
+];

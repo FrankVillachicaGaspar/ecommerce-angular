@@ -3,5 +3,20 @@
   font-size: 14px;
 }
 
+.tbutton-max-with {
+  min-width: 160px;
+}
+
+.custom-dialog-container .mat-mdc-dialog-surface {
+  border-radius: 14px !important;
+  -webkit-border-radius: 14px !important;
+  -moz-border-radius: 14px !important;
+  -ms-border-radius: 14px !important;
+  -o-border-radius: 14px !important;
+}
+
 /* html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
